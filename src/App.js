@@ -36,7 +36,7 @@ function App() {
       <ContentContainer>
         <h1>Fish Facts!</h1>
         <p>To start, type a word or phrase and click Search.</p>
-        <SearchContainer>
+        <div>
           <StyledInput
             onChange={(event) => setSearchBoxText(event.target.value)}
             onKeyDown={(ev) => {
@@ -49,7 +49,7 @@ function App() {
           <StyledLink onClick={handleClick} className="btn btn-primary">
             Search
           </StyledLink>
-        </SearchContainer>
+        </div>
         {title && (
           <ContentDiv>
             <Title>{title}</Title>
@@ -96,8 +96,6 @@ const ContentParagraph = styled.p`
   border-radius: 25px;
   padding: 20px 200px;
 `;
-
-const SearchContainer = styled.div``;
 
 const StyledInput = styled.input`
   margin-right: 5px;
