@@ -34,7 +34,7 @@ function App() {
   return (
     <PageContainer className="jumbotron">
       <ContentContainer>
-        <h1>Wikipedia API Demonstration</h1>
+        <h1>Fish Facts!</h1>
         <p>To start, type a word or phrase and click Search.</p>
         <SearchContainer>
           <StyledInput
@@ -81,10 +81,8 @@ const Title = styled.h1`
 `;
 
 const ContentParagraph = styled.p`
-  margin-top: 15px;
-  padding-left: 200px;
-  padding-right: 200px;
-  background-color: darkblue;
+  padding: 20px 200px;
+  background-color: #23395d;
   color: white;
   border-radius: 25px;
 `;
@@ -94,15 +92,23 @@ const SearchContainer = styled.div``;
 const StyledInput = styled.input`
   margin-right: 5px;
   height: 40px;
+  border-radius: 25px;
 `;
 
 const StyledLink = styled.button`
   margin-top: -5px;
+
+  border-radius: 25px;
 `;
 
 const ContentDiv = styled.div`
+  margin-top: 15px;
+  padding-top: 1px;
   align-items: center;
   text-align: center;
+  background-color: #34aed1;
+
+  border-radius: 25px;
 `;
 
 export default App;
