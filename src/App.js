@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { getWikiInfo } from "./Api/wikiApi";
 
 function App() {
   const [searchBoxText, setSearchBoxText] = useState("");
@@ -7,28 +8,11 @@ function App() {
   const [content, setContent] = useState("");
   const [imageSrc, setImageSrc] = useState("");
 
-  function handleClick() {
-    const Url =
-      "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchBoxText;
-    fetch(Url, { method: "GET" })
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (json) {
-        console.log(json);
-        try {
-          setTitle(json.title);
-          setContent(json.extract);
-          setImageSrc(json.originalimage.source);
-          console.log(json.title);
-          console.log(json.extract);
-          console.log(json.thumbnail.source);
-        } catch {
-          setTitle("No Exact Match Found");
-          setContent("");
-          setImageSrc("");
-        }
-      });
+  async function handleClick() {
+    const info = await getWikiInfo(searchBoxText);
+    setTitle(info.title);
+    setContent(info.extract);
+    setImageSrc(info.source);
   }
 
   return (
