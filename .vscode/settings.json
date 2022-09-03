@@ -1,0 +1,12 @@
+{
+  "gitflow4code.features": [
+    {
+      "name": "feature/FirstPass",
+      "base": "develop"
+    },
+    {
+      "name": "feature/SecondPass",
+      "base": "develop"
+    }
+  ]
+}
