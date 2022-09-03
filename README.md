@@ -1,6 +1,7 @@
 # Fish Facts!
 
 Fish Facts is a goofy little side project.  It's an app that pulls a randomized fish facts + image using the Wikipedia API
+I went a little crazy with the box shadows, sue me.
 
 ### This project was  was bootstrapped with Create React App, I've left the default README info below.
 

@@ -76,6 +76,7 @@ const ContentContainer = styled.div`
 const Image = styled.img`
   max-height: 500px;
   max-width: 500px;
+  box-shadow: 8px 5px 5px #23395d;
 `;
 
 const Title = styled.h1`
