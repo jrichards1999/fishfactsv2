@@ -50,11 +50,13 @@ function App() {
             Search
           </StyledLink>
         </SearchContainer>
-        <ContentDiv>
-          <Title>{title}</Title>
-          <Image src={imageSrc} alt="" />
-          <ContentParagraph>{content}</ContentParagraph>
-        </ContentDiv>
+        {title && (
+          <ContentDiv>
+            <Title>{title}</Title>
+            <Image src={imageSrc} alt="" />
+            <ContentParagraph>{content}</ContentParagraph>
+          </ContentDiv>
+        )}
       </ContentContainer>
     </PageContainer>
   );
@@ -68,6 +70,7 @@ const ContentContainer = styled.div`
   padding: 25px;
   border-radius: 25px;
   background-color: #add8e6;
+  box-shadow: 8px 5px 5px gray;
 `;
 
 const Image = styled.img`
@@ -80,11 +83,18 @@ const Title = styled.h1`
   margin-bottom: 15px;
 `;
 
+// TODO - Media query stuff currently not working
+// export const device = {
+//   big: `(min-width: 1024)`,
+//   small: `(min-width: 768)`,
+// };
+
 const ContentParagraph = styled.p`
-  padding: 20px 200px;
+  margin-top: 15px;
   background-color: #23395d;
   color: white;
   border-radius: 25px;
+  padding: 20px 200px;
 `;
 
 const SearchContainer = styled.div``;
@@ -92,12 +102,10 @@ const SearchContainer = styled.div``;
 const StyledInput = styled.input`
   margin-right: 5px;
   height: 40px;
-  border-radius: 25px;
 `;
 
 const StyledLink = styled.button`
   margin-top: -5px;
-
   border-radius: 25px;
 `;
 
@@ -108,6 +116,7 @@ const ContentDiv = styled.div`
   text-align: center;
   background-color: #34aed1;
 
+  box-shadow: 8px 5px 5px gray;
   border-radius: 25px;
 `;
 
