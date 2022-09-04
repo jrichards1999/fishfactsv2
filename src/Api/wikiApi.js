@@ -1,3 +1,5 @@
+import { fishList } from "./fishList";
+
 export class WikiInfo {
   constructor(title, extract, source) {
     this.extract = extract;
@@ -14,8 +16,18 @@ export async function getWikiInfo(searchTerm) {
       return response.json();
     })
     .then(function (json) {
-      console.log(json);
       info = new WikiInfo(json.title, json.extract, json.originalimage.source);
     });
   return info;
+}
+
+export function getRandomFish() {
+  const fish = fishList[getRandomInt(0, fishList.length - 1)];
+  return fish;
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

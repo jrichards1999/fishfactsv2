@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { getWikiInfo } from "./Api/wikiApi";
+import { getRandomFish, getWikiInfo } from "./Api/wikiApi";
 
 function App() {
-  const [searchBoxText, setSearchBoxText] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imageSrc, setImageSrc] = useState("");
 
   async function handleClick() {
-    const info = await getWikiInfo(searchBoxText);
+    const fish = getRandomFish();
+    const info = await getWikiInfo(fish);
     setTitle(info.title);
     setContent(info.extract);
     setImageSrc(info.source);
@@ -19,20 +19,10 @@ function App() {
     <PageContainer className="jumbotron">
       <ContentContainer>
         <h1>Fish Facts!</h1>
-        <p>To start, type a word or phrase and click Search.</p>
         <div>
-          <StyledInput
-            onChange={(event) => setSearchBoxText(event.target.value)}
-            onKeyDown={(ev) => {
-              if (ev.key === "Enter") {
-                ev.preventDefault();
-                handleClick();
-              }
-            }}
-          ></StyledInput>
-          <StyledLink onClick={handleClick} className="btn btn-primary">
-            Search
-          </StyledLink>
+          <StyledButton onClick={handleClick} className="btn btn-primary">
+            Show Me Da Fishees
+          </StyledButton>
         </div>
         {title && (
           <ContentDiv>
@@ -75,21 +65,25 @@ const Title = styled.h1`
 // };
 
 const ContentParagraph = styled.p`
-  margin-top: 15px;
+  margin-top: 30px;
   background-color: #23395d;
   color: white;
   border-radius: 25px;
   padding: 20px 200px;
 `;
 
-const StyledInput = styled.input`
-  margin-right: 5px;
-  height: 40px;
-`;
-
-const StyledLink = styled.button`
+const StyledButton = styled.button`
   margin-top: -5px;
   border-radius: 25px;
+  background-color: #23395d;
+
+  :hover {
+    background-color: #33435e;
+  }
+
+  :focus {
+    background-color: #23395d;
+  }
 `;
 
 const ContentDiv = styled.div`
