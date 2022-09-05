@@ -1,5 +1,6 @@
 {
   "name": "fishfactsv2",
+  "homepage": "https://jrichards1999.github.io/fishfacts-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
