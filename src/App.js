@@ -76,6 +76,7 @@ const StyledButton = styled.button`
   margin-top: -5px;
   border-radius: 25px;
   background-color: #23395d;
+  box-shadow: 8px 5px 5px gray;
 
   :hover {
     background-color: #33435e;
@@ -83,6 +84,7 @@ const StyledButton = styled.button`
 
   :focus {
     background-color: #23395d;
+    box-shadow: 8px 5px 5px gray;
   }
 `;
 
