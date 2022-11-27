@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { getRandomFish, getWikiInfo } from "./Api/wikiApi";
 
-function App() {
+function App(): JSX.Element {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imageSrc, setImageSrc] = useState("");

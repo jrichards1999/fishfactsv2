@@ -1,22 +1,29 @@
 import { fishList } from "./fishList";
 
-export class WikiInfo {
-  constructor(title, extract, source) {
-    this.extract = extract;
-    this.title = title;
-    this.source = source;
-  }
+interface IWikiInfo {
+  extract: string;
+  title: string;
+  source: string;
 }
 
 export async function getWikiInfo(searchTerm) {
   const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
-  let info = new WikiInfo("No Exact Match Found", "", "");
+  let info: IWikiInfo = {
+    extract: "No Exact Match Found",
+    title: "",
+    source: "",
+  };
   await fetch(url, { method: "GET" })
     .then(function (response) {
       return response.json();
     })
     .then(function (json) {
-      info = new WikiInfo(json.title, json.extract, json.originalimage.source);
+      //info = new WikiInfo(json.title, json.extract, json.originalimage.source);
+      info = {
+        title: json.title,
+        extract: json.extract,
+        source: json.originalimage.source,
+      };
     });
   return info;
 }
