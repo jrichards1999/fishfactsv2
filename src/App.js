@@ -18,10 +18,10 @@ function App() {
   return (
     <PageContainer className="jumbotron">
       <ContentContainer>
-        <h1>Fish Facts!</h1>
+        <h1>Fish Facts</h1>
         <div>
           <StyledButton onClick={handleClick} className="btn btn-primary">
-            Show Me Da Fishees
+            Next Fish
           </StyledButton>
         </div>
         {title && (
@@ -74,6 +74,7 @@ const ContentParagraph = styled.p`
 
 const StyledButton = styled.button`
   margin-top: -5px;
+  margin-left: 35px;
   border-radius: 25px;
   background-color: #23395d;
   box-shadow: 8px 5px 5px gray;
