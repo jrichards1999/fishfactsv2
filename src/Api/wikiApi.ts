@@ -6,7 +6,7 @@ interface IWikiInfo {
   source: string;
 }
 
-export async function getWikiInfo(searchTerm) {
+export async function getWikiInfo(searchTerm: string) {
   const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
   let info: IWikiInfo = {
     extract: "No Exact Match Found",
@@ -33,7 +33,7 @@ export function getRandomFish() {
   return fish;
 }
 
-function getRandomInt(min, max) {
+function getRandomInt(min: number, max: number) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;

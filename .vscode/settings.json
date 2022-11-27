@@ -12,5 +12,6 @@
       "name": "feature/BringMeTheFish",
       "base": "develop"
     }
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
