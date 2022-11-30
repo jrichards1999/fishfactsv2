@@ -10,7 +10,7 @@ import {
   Title,
 } from "./App.styles";
 
-function App(): JSX.Element {
+export default function App(): JSX.Element {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imageSrc, setImageSrc] = useState("");
@@ -43,5 +43,3 @@ function App(): JSX.Element {
     </PageContainer>
   );
 }
-
-export default App;
