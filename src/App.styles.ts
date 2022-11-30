@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 export const PageContainer = styled.div`
   margin: 25px;
 `;
@@ -9,7 +11,7 @@ export const ContentContainer = styled.div`
   box-shadow: 8px 5px 5px gray;
 `;
 
-export const Image = styled.img`
+export const StyledImage = styled.img`
   max-height: 500px;
   max-width: 500px;
   box-shadow: 8px 5px 5px #23395d;
@@ -36,6 +38,7 @@ export const ContentParagraph = styled.p`
 
 export const StyledButton = styled.button`
   margin-top: -5px;
+  margin-left: 35px;
   border-radius: 25px;
   background-color: #23395d;
   box-shadow: 8px 5px 5px gray;
