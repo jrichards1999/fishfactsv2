@@ -11,6 +11,11 @@
     {
       "name": "feature/BringMeTheFish",
       "base": "develop"
+    },
+    {
+      "name": "feature/MoveStylesToNewFile",
+      "base": "develop"
     }
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
