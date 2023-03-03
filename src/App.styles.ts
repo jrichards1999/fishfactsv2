@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const PageContainer = styled.div`
-  margin: 25px;
+  padding: 25px;
+  background-color: darkgray;
 `;
 
 export const ContentContainer = styled.div`
