@@ -30,11 +30,13 @@ export default function App(): JSX.Element {
             Next Fish
           </StyledButton>
         </div>
-        {!isLoading ? (
+        {!wikiInfo ? (
+          <></>
+        ) : !isLoading ? (
           <ContentDiv>
-            <Title>{wikiInfo?.title}</Title>
-            <StyledImage src={wikiInfo?.source} alt={wikiInfo?.title} />
-            <ContentParagraph>{wikiInfo?.extract}</ContentParagraph>
+            <Title>{wikiInfo.title}</Title>
+            <StyledImage src={wikiInfo.source} alt={wikiInfo?.title} />
+            <ContentParagraph>{wikiInfo.extract}</ContentParagraph>
           </ContentDiv>
         ) : (
           <p>LOADING AAAAHHHHHHHH</p>
