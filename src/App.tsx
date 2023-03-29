@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
 import { useGetWikiInfo } from "./Api/hooks/useGetWikiInfo";
 import { getRandomFish } from "./Api/wikiApi";
 import {
