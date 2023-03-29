@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { getRandomFish, getWikiInfo } from "./Api/wikiApi";
+import { useGetWikiInfo } from "./Api/hooks/useGetWikiInfo";
+import { getRandomFish } from "./Api/wikiApi";
 import {
   ContentContainer,
   ContentDiv,
@@ -11,16 +12,12 @@ import {
 } from "./App.styles";
 
 export default function App(): JSX.Element {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [imageSrc, setImageSrc] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
+  const { data: wikiInfo, isLoading } = useGetWikiInfo(searchTerm, handleClick);
 
-  async function handleClick() {
+  function handleClick() {
     const fish = getRandomFish();
-    const info = await getWikiInfo(fish);
-    setTitle(info.title);
-    setContent(info.extract);
-    setImageSrc(info.source);
+    setSearchTerm(fish);
   }
 
   return (
@@ -32,12 +29,16 @@ export default function App(): JSX.Element {
             Next Fish
           </StyledButton>
         </div>
-        {title && (
+        {!wikiInfo ? (
+          <></>
+        ) : !isLoading ? (
           <ContentDiv>
-            <Title>{title}</Title>
-            <StyledImage src={imageSrc} alt="" />
-            <ContentParagraph>{content}</ContentParagraph>
+            <Title>{wikiInfo.title}</Title>
+            <StyledImage src={wikiInfo.source} alt={wikiInfo?.title} />
+            <ContentParagraph>{wikiInfo.extract}</ContentParagraph>
           </ContentDiv>
+        ) : (
+          <p>LOADING AAAAHHHHHHHH</p>
         )}
       </ContentContainer>
     </PageContainer>

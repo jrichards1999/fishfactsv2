@@ -1,6 +1,6 @@
 import { fishList } from "./fishList";
 
-interface IWikiInfo {
+export interface IWikiInfo {
   extract: string;
   title: string;
   source: string;
@@ -12,7 +12,7 @@ const defaultInfo: IWikiInfo = {
   source: "",
 };
 
-export async function getWikiInfo(searchTerm: string) {
+export async function getWikiInfo(searchTerm?: string) {
   const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
   let toRtn = defaultInfo;
   await fetch(url, { method: "GET" })
