@@ -19,6 +19,10 @@
     {
       "name": "feature/AddReactQuery",
       "base": "develop"
+    },
+    {
+      "name": "feature/MoreInfoOnPage",
+      "base": "develop"
     }
   ],
   "typescript.tsdk": "node_modules/typescript/lib"

@@ -34,6 +34,11 @@ export const ContentParagraph = styled.p`
   color: white;
   border-radius: 25px;
   padding: 20px 200px;
+
+  p {
+    // We apply the margin stying in the upper paragraph, so we remove any margin styling that comes with the html
+    margin: 0px;
+  }
 `;
 
 export const StyledButton = styled.button`
