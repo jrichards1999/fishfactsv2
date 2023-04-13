@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useGetWikiInfo } from "./Api/hooks/useGetWikiInfo";
-import { getRandomFish } from "./Api/wikiApi";
+import { getFishList, getRandomFish } from "./Api/wikiApi";
 import {
   BarLine,
   ContentContainer,
@@ -17,6 +17,7 @@ export default function App(): JSX.Element {
   const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
   const { data: wikiInfo, isLoading } = useGetWikiInfo(searchTerm, handleClick);
   const formattedTimeStamp = new Date(wikiInfo?.timestamp ?? "");
+  getFishList();
 
   function handleClick() {
     const fish = getRandomFish();

@@ -1,29 +1,4 @@
 {
-  "gitflow4code.features": [
-    {
-      "name": "feature/FirstPass",
-      "base": "develop"
-    },
-    {
-      "name": "feature/SecondPass",
-      "base": "develop"
-    },
-    {
-      "name": "feature/BringMeTheFish",
-      "base": "develop"
-    },
-    {
-      "name": "feature/MoveStylesToNewFile",
-      "base": "develop"
-    },
-    {
-      "name": "feature/AddReactQuery",
-      "base": "develop"
-    },
-    {
-      "name": "feature/MoreInfoOnPage",
-      "base": "develop"
-    }
-  ],
+  "gitflow4code.features": [],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
