@@ -1,32 +1,29 @@
 import { fishList } from "./fishList";
 
+const fishInfoUrl = (searchTerm?: string) =>
+  "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
+
 export interface IWikiInfo {
-  extract: string;
   title: string;
   source: string;
+  extract_html: string;
+  timestamp: string;
 }
 
-const defaultInfo: IWikiInfo = {
-  extract: "No Exact Match Found",
-  title: "",
-  source: "",
-};
-
 export async function getWikiInfo(searchTerm?: string) {
-  const url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
-  let toRtn = defaultInfo;
-  await fetch(url, { method: "GET" })
+  const url = fishInfoUrl(searchTerm);
+  return await fetch(url, { method: "GET" })
     .then(function (response) {
       return response.json();
     })
     .then(function (json) {
-      toRtn = {
+      return {
         title: json.title,
-        extract: json.extract,
+        extract_html: json.extract_html,
         source: json.originalimage.source,
+        timestamp: json.timestamp,
       };
     });
-  return toRtn;
 }
 
 export function getRandomFish(): string {
