@@ -15,6 +15,7 @@ export const StyledImage = styled.img`
   max-height: 500px;
   max-width: 500px;
   box-shadow: 8px 5px 5px #23395d;
+  border-radius: 25px;
 `;
 
 export const Title = styled.h1`
@@ -66,5 +67,21 @@ export const ContentDiv = styled.div`
   background-color: #34aed1;
 
   box-shadow: 8px 5px 5px gray;
+  border-radius: 25px;
+`;
+
+export const StyledTimeStamp = styled.p`
+  text-align: center;
+  font-size: 0.85em;
+  opacity: 50%;
+`;
+
+export const BarLine = styled.div`
+  width: 100%;
+  height: 6px;
+  background-color: gray;
+  box-shadow: 8px 5px 5px gray;
+  opacity: 25%;
+  margin: 20px 0px;
   border-radius: 25px;
 `;
