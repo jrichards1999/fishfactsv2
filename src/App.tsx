@@ -15,7 +15,7 @@ import {
 
 export default function App(): JSX.Element {
   const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
-  const { data: wikiInfo, isLoading } = useGetWikiInfo(searchTerm, handleClick);
+  const { data: wikiInfo } = useGetWikiInfo(searchTerm, handleClick);
   const formattedTimeStamp = new Date(wikiInfo?.timestamp ?? "");
 
   function handleClick() {
@@ -34,7 +34,7 @@ export default function App(): JSX.Element {
         </div>
         {!wikiInfo ? (
           <></>
-        ) : !isLoading ? (
+        ) : (
           <ContentDiv>
             <Title>{wikiInfo.title}</Title>
             <StyledImage src={wikiInfo.source} alt={wikiInfo?.title} />
@@ -42,8 +42,6 @@ export default function App(): JSX.Element {
               dangerouslySetInnerHTML={{ __html: wikiInfo.extract_html }}
             ></ContentParagraph>
           </ContentDiv>
-        ) : (
-          <p>LOADING AAAAHHHHHHHH</p>
         )}
       </ContentContainer>
       {wikiInfo?.timestamp && (
