@@ -77,6 +77,5 @@ function massageRawData(source: string): string[] {
    } while (!listEnd);
 
    fishList = fishList.filter((word) => !wordsToIgnore.includes(word));
-   console.log(fishList);
    return fishList;
 }
