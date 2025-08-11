@@ -38,11 +38,9 @@ export default function App(): JSX.Element {
       <PageContainer className="jumbotron">
          <ContentContainer>
             <h1>Fish Facts</h1>
-            <div>
-               <StyledButton onClick={handleClick} className="btn btn-primary">
-                  Next Fish
-               </StyledButton>
-            </div>
+            <StyledButton onClick={handleClick} className="btn btn-primary">
+               Next Fish
+            </StyledButton>
             {!wikiInfo ? (
                <></>
             ) : (
