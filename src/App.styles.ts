@@ -60,11 +60,11 @@ export const StyledButton = styled.button`
    background-color: #23395d;
    box-shadow: 8px 5px 5px gray;
 
-   :hover {
+   &:hover {
       background-color: #33435e;
    }
 
-   :focus {
+   &:focus {
       background-color: #23395d;
       box-shadow: 8px 5px 5px gray;
    }
