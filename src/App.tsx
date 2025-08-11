@@ -1,30 +1,35 @@
 import React, { useState } from "react";
+import sound from "./assets/leFishe.mp3";
 import { useGetWikiInfo } from "./Api/hooks/useGetWikiInfo";
 import { getRandomFish } from "./Api/wikiApi";
-import sound from "./assets/leFishe.mp3";
 import {
-   BarLine,
-   ContentContainer,
-   ContentDiv,
-   ContentParagraph,
    PageContainer,
+   ContentContainer,
    StyledButton,
-   StyledImage,
-   StyledTimeStamp,
+   ContentDiv,
    Title,
+   StyledImage,
+   ContentParagraph,
+   BarLine,
+   StyledTimeStamp,
 } from "./App.styles";
+import { useGetFishList } from "./Api/hooks/useGetFishList";
 
 export default function App(): JSX.Element {
    const [searchTerm, setSearchTerm] = useState<string | undefined>(undefined);
-   const { data: wikiInfo } = useGetWikiInfo(searchTerm, handleClick);
-   const formattedTimeStamp = new Date(wikiInfo?.timestamp ?? "");
-   const audio = new Audio(sound);
    const [audioIsPlaying, setAudioIsPlaying] = useState(false);
 
+   const { data: wikiInfo } = useGetWikiInfo(searchTerm, handleClick);
+   const { data: fishList } = useGetFishList();
+   const formattedTimeStamp = new Date(wikiInfo?.timestamp ?? "");
+   const audio = new Audio(sound);
+
    function handleClick() {
-      const fish = getRandomFish();
-      setSearchTerm(fish);
-      playLeFishe();
+      if (fishList) {
+         const fish = getRandomFish(fishList);
+         setSearchTerm(fish);
+         playLeFishe();
+      }
    }
 
    const playLeFishe = () => {
