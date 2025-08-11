@@ -1,33 +1,36 @@
 {
-  "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig to read more about this file */
+   "compilerOptions": {
+      /* Visit https://aka.ms/tsconfig to read more about this file */
 
-    /* Projects */
+      /* Projects */
 
-    /* Language and Environment */
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+      /* Language and Environment */
+      "target": "es2017" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
 
-    /* Modules */
-    "module": "commonjs" /* Specify what module code is generated. */,
+      /* Modules */
+      "module": "commonjs" /* Specify what module code is generated. */,
 
-    /* Emit */
+      /* Emit */
 
-    /* Interop Constraints */
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+      /* Interop Constraints */
+      "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
 
-    /* Type Checking */
+      /* Type Checking */
 
-    /* Completeness */
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "allowJs": true,
-    "checkJs": false,
-    "jsx": "react",
-    "outDir": "./build",
-    "removeComments": true,
-    "noEmit": true,
-    "pretty": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true
-  }
+      /* Completeness */
+      "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+      "allowJs": true,
+      "checkJs": false,
+      "jsx": "react",
+      "outDir": "./build",
+      "removeComments": true,
+      "noEmit": true,
+      "pretty": true,
+      "strict": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true
+   },
+   "experiments": {
+      "topLevelAwait": true
+   }
 }
