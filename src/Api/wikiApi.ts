@@ -2,7 +2,7 @@ const fishInfoUrl = (searchTerm?: string) =>
    "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchTerm;
 
 const fishListUrl =
-   "https://api.wikimedia.org/core/v1/wikipedia/en/page/List_of_fish_common_names";
+   "https://api.wikimedia.org/core/v1/wikipedia/en/page/List_of_fish_by_common_name";
 
 export interface IWikiInfo {
    title: string;
